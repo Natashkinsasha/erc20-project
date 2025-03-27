@@ -33,20 +33,6 @@ const chainIds = {
   ganache: 1337,
 };
 
-const etherscanApiKey = {
-  ["polygon-mumbai"]: process.env["BLOCKCHAIN_POLYGONSCAN_API_KEY"] || "",
-  sepolia: process.env["BLOCKCHAIN_ETHERSCAN_API_KEY"] || "",
-  hardhat: undefined,
-  ganache: undefined,
-};
-
-const etherscanApiUrl = {
-  ["polygon-mumbai"]: undefined,
-  sepolia: "https://api-sepolia.etherscan.io/",
-  hardhat: undefined,
-  ganache: undefined,
-};
-
 function getChainConfig(chain: keyof typeof chainIds): NetworkUserConfig {
   const jsonRpcUrl = getUrl(chain);
   return {

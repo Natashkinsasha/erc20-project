@@ -44,7 +44,7 @@ export function createApp() {
     client: walletClient,
   });
 
-  app.get("/token", async (_: Request, res: Response, next: NextFunction) => {
+  app.get("/token", async (_: Request, res: Response, _next: NextFunction) => {
     const [name, symbol, totalSupply] = await Promise.all([
       contract.read.name(),
       contract.read.symbol(),
@@ -53,18 +53,18 @@ export function createApp() {
     res.json({ name, symbol, totalSupply: totalSupply.toString() });
   });
 
-  app.get("/balance/:address", async (req: Request<{ address: `0x${string}` }>, res: Response, next: NextFunction) => {
+  app.get("/balance/:address", async (req: Request<{ address: `0x${string}` }>, res: Response, _next: NextFunction) => {
     const balance = await contract.read.balanceOf([req.params.address]);
     res.json({ balance: balance.toString() });
   });
 
-  app.post("/transferFrom", async (req: Request, res: Response, next: NextFunction) => {
+  app.post("/transferFrom", async (req: Request, res: Response, _next: NextFunction) => {
     const { from, to, amount } = req.body;
     const hash = await contract.write.transferFrom([from, to, BigInt(amount)]);
     res.json({ hash });
   });
 
-  app.post("/mint", async (req: Request, res: Response, next: NextFunction) => {
+  app.post("/mint", async (req: Request, res: Response, _next: NextFunction) => {
     const { to, amount } = req.body;
     const hash = await contract.write.mint([to, BigInt(amount)]);
     res.json({ hash });
