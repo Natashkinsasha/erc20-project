@@ -1,3 +1,12 @@
+## ⚠️ Disclaimer
+
+**This project provides minimal functionality and is not suitable for production use without significant modifications.**
+
+- A **mnemonic phrase is stored in plaintext** for convenience and quick project startup. **This is never acceptable in real-world applications.** The wallet contains **no real-value cryptocurrency**.
+- The API **lacks authentication**, which is critical for sensitive endpoints such as **minting** and **transfers**. This is done solely for demonstration purposes.
+
+---
+
 # ERC20 Project
 
 This project is a monorepo that includes:
