@@ -1,0 +1,58 @@
+# compiled output
+/dist
+/node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.misc
+apps/contracts/artifacts
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+/swagger.json
+cicd/terraform/hetzner/.terraform/terraform.tfstate
+cicd/terraform/hetzner/.terraform/providers/*
+cicd/terraform/.hide/.terraform/providers/*
+cicd/terraform/hetzner/.terraform/environment
+/settings/
+/meta/
+
+# Yarn.lock is only updated by admin repo maintainer when needed
+**/yarn.lock
+report.json
+report.html
+users.csv
+devices.csv
+
+# Sentry Config File
+.sentryclirc
+
+
+# vscode
+/.vscode
